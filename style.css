@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Noto+Serif+Armenian:wght@300;400;500;600;700&display=swap');
+:root{--ivory:#F8F4EE;--beige:#EDE6D7;--sage:#A8B79A;--olive:#7D8F73;--gold:#CBA878;--brown:#58421f}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:#ebe5d8;color:var(--brown);font-family:'Noto Serif Armenian',serif}
+body{display:grid;place-items:center}
+.app{position:relative;width:100vw;height:100dvh;max-width:520px;max-height:930px;aspect-ratio:9/16;background:var(--ivory);overflow:hidden;box-shadow:0 18px 70px rgba(60,45,25,.16)}
+.card{position:absolute;inset:0;opacity:0;pointer-events:none;transform:scale(1.012);transition:opacity .9s ease,transform .9s ease;background:radial-gradient(circle at 50% 14%,#fffaf5,transparent 44%),linear-gradient(#fbf8f0,#f3ece1)}
+.card.active{opacity:1;pointer-events:auto;transform:scale(1)}
+.card:after{content:"";position:absolute;inset:0;opacity:.08;background-image:radial-gradient(circle,rgba(90,70,42,.14) 0 1px,transparent 1.4px);background-size:94px 122px}
+.frame:before{content:"";position:absolute;z-index:2;inset:18px;border:1.6px solid rgba(203,168,120,.92);border-radius:31px}
+.frame:after{content:"";position:absolute;z-index:2;inset:35px;border:.8px solid rgba(203,168,120,.45);border-radius:23px}
+.calligraphy{font-family:'Cormorant Garamond','Noto Serif Armenian',serif;font-style:italic;color:var(--gold);font-weight:700;letter-spacing:.02em}
+.music{position:fixed;z-index:60;top:max(24px,calc(env(safe-area-inset-top) + 14px));right:30px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(203,168,120,.8);background:#fffaf4cc;color:var(--brown);font-size:20px;box-shadow:0 8px 20px rgba(88,66,31,.08)}
+.music.playing{background:var(--olive);color:white}
+.dove{position:absolute;z-index:4;filter:opacity(.88) saturate(.78);animation:doveFloat 5s ease-in-out infinite}
+.top-dove{top:7%;left:50%;width:15%;transform:translateX(-50%)}
+.dcover{top:7%;left:50%;width:17%;transform:translateX(-50%);opacity:.65}
+.tiny{top:7%;left:50%;width:12%;transform:translateX(-50%)}
+.final-dove{top:4%;left:50%;width:29%;transform:translateX(-50%);opacity:.58}
+.olive{position:absolute;z-index:3;mix-blend-mode:multiply;filter:opacity(.55) saturate(.75)}
+.olive-a{left:-17%;top:5%;width:45%;transform:rotate(42deg)}
+.olive-b{right:-18%;bottom:2%;width:47%;transform:scaleX(-1) rotate(40deg)}
+.side-left,.side-right{top:35%;width:31%;opacity:.42}
+.side-left{left:-6%;transform:rotate(-22deg)}
+.side-right{right:-6%;transform:scaleX(-1) rotate(-22deg)}
+.ornament{position:absolute;z-index:4;left:50%;transform:translateX(-50%);opacity:.72;filter:saturate(.9)}
+.top-orn{top:12%;width:32%}
+.bottom-orn{bottom:10%;width:42%}
+.divider{display:block;width:48%;margin:8% auto 0;opacity:.55}
+.hero{position:absolute;left:50%;top:32%;width:88%;transform:translateX(-50%);text-align:center;font-size:clamp(42px,11.5vw,58px);line-height:1.08;margin:0}
+.names{position:absolute;left:50%;top:56%;width:92%;transform:translateX(-50%);text-align:center;font-family:'Cormorant Garamond','Noto Serif Armenian',serif;font-style:italic;color:var(--gold);font-weight:700;font-size:clamp(31px,8vw,42px);line-height:1.08;margin:0}
+.title-page .title-main{position:absolute;left:50%;top:44%;width:92%;transform:translate(-50%,-50%);text-align:center;font-size:clamp(43px,12vw,58px);line-height:1.18;margin:0}
+.intro .body{position:absolute;left:50%;top:60%;width:78%;transform:translateX(-50%);text-align:center;font-size:clamp(16px,4.3vw,20px);line-height:1.55}
+.smallNames{top:76%;font-size:clamp(27px,7vw,36px)}
+.reveal{opacity:0;clip-path:inset(0 100% 0 0)}
+.active .reveal{animation:write 1.9s cubic-bezier(.22,1,.36,1) .35s forwards, shimmer 3s ease 2.2s 1}
+@keyframes write{to{opacity:1;clip-path:inset(0 0 0 0)}}
+@keyframes shimmer{50%{text-shadow:0 0 18px rgba(203,168,120,.35)}}
+@keyframes doveFloat{50%{transform:translateX(-50%) translateY(-9px)}}
+.dateBlock{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);text-align:center;color:var(--gold);font-weight:700}
+.dateBlock div{font-size:clamp(50px,13vw,66px);line-height:1.32;letter-spacing:.04em}
+.ceremony{padding:17% 12% 0;text-align:center}
+.ceremony h1{font-size:clamp(34px,8.8vw,46px);line-height:1.12;margin:8% 0 8%}
+.ceremony p{font-size:clamp(15px,4.1vw,18px);line-height:1.45;margin:7px 0}
+.ceremony .names{position:static;transform:none;width:auto;font-size:clamp(29px,7.4vw,38px);line-height:1.1;margin:13px 0!important}
+.ceremony .small{font-size:clamp(14px,3.8vw,16px)}
+.location{text-align:center;padding-top:19%}
+.location h1{font-size:clamp(23px,5.8vw,30px);font-weight:500;margin:18% 0 0}
+.location h2{font-size:clamp(38px,10vw,50px);color:var(--gold);font-style:italic;margin:8px 0 23px;font-family:'Cormorant Garamond','Noto Serif Armenian',serif}
+.location .big{font-size:clamp(48px,13vw,62px)}
+.location hr{width:38%;border:0;border-top:1px solid rgba(203,168,120,.75);margin:0 auto 23px}
+.location strong{display:block;color:var(--gold);font-size:clamp(50px,14vw,62px);margin-bottom:8px}
+.location p{color:var(--olive);font-size:22px;margin:10px}
+.location a,.reply{display:inline-block;text-decoration:none;border:1.4px solid rgba(203,168,120,.9);border-radius:999px;background:#fffaf4c4;color:var(--brown);padding:13px 28px;font-size:17px;box-shadow:0 12px 26px rgba(90,66,34,.07)}
+.blessing-page{text-align:center;padding:25% 10% 0}
+.blessing{font-size:clamp(30px,7.6vw,38px);line-height:1.25;margin:20% 0 0}
+.parents{text-align:center;padding:27% 9% 0}
+.parents .love{font-size:clamp(26px,7vw,34px);color:var(--gold);margin-top:25%}
+.parents h2{font-weight:500;font-size:clamp(22px,5.7vw,28px);line-height:1.45}
+.rsvp{text-align:center;padding:21% 8% 0}
+.rsvp h1{font-size:25px;margin:0 0 12px}
+.rsvp h2{font-size:30px;line-height:1.22;color:var(--gold);margin:0 0 14px}
+.rsvp p{font-size:21px;line-height:1.35}
+.reply{display:block;margin:18px auto 0;width:88%;max-width:370px;color:var(--olive);line-height:1.28}
+.rsvp-olive{left:50%;bottom:8%;width:30%;transform:translateX(-50%) rotate(90deg);opacity:.28}
+.envPack{position:absolute;left:50%;top:43%;width:78%;height:42%;transform:translate(-50%,-50%);filter:drop-shadow(0 24px 34px rgba(80,58,31,.18))}
+.envPack img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.env-shadow{opacity:.55;transform:translateY(18px) scale(1.05)}
+.env-back{z-index:1}.env-front{z-index:3}.env-flap{z-index:4;transform-origin:50% 15%;animation:flapOpen 2.4s ease-in-out infinite alternate}.env-seal{z-index:5;animation:sealPulse 2.2s ease-in-out infinite}
+.openBtn{position:absolute;left:50%;bottom:12%;transform:translateX(-50%);border:1.3px solid rgba(203,168,120,.85);border-radius:999px;padding:14px 38px;background:#fffaf4d6;color:var(--brown);font:500 17px 'Noto Serif Armenian';box-shadow:0 12px 26px rgba(90,66,34,.08)}
+@keyframes flapOpen{to{transform:rotateX(-18deg) translateY(-3px)}}
+@keyframes sealPulse{50%{filter:drop-shadow(0 0 14px rgba(203,168,120,.45))}}
+.final{text-align:center;padding:22% 9% 0}
+.final .hero{top:32%;font-size:clamp(38px,10vw,52px)}
+.finaltext{position:absolute;left:50%;top:55%;width:78%;transform:translateX(-50%);font-size:clamp(17px,4.5vw,21px);line-height:1.55}
+nav{position:absolute;z-index:30;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:13px}
+nav button{width:40px;height:40px;border-radius:50%;border:1px solid rgba(203,168,120,.75);background:#fffaf4c8;color:var(--brown);font-size:28px}
+#dots{display:flex;gap:7px}
+#dots i{width:7px;height:7px;border-radius:50%;background:rgba(88,66,31,.22)}
+#dots i.active{background:var(--gold)}
+@media(max-height:760px){.hero{font-size:clamp(36px,10vw,48px)}.ceremony{padding-top:14%}.ceremony h1{margin-top:7%;font-size:34px}.ceremony p{font-size:14px}.blessing{font-size:28px}.envPack{width:72%}}
