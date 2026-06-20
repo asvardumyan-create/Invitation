@@ -1,1 +1,0 @@
-Final Invitation V5 Ready. Upload index.html, style.css, script.js, background_music.mp3 and assets/ to GitHub root and deploy on Vercel.
